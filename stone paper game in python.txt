@@ -1,0 +1,45 @@
+import random
+
+choices = ["stone", "paper", "scissors"]
+attempts = 0
+max_attempts = 3
+user_score = 0
+computer_score = 0
+
+while attempts < max_attempts:
+    computer = random.choice(choices)
+    user = input("Enter your choice (stone/paper/scissors): ").lower()
+
+    print("Computer's choice:", computer)
+    print("User's choice:", user)
+
+    if computer == user:
+        print("It's a tie! No points.")
+    elif (computer == "stone" and user == "paper") or \
+         (computer == "paper" and user == "scissors") or \
+         (computer == "scissors" and user == "stone"):
+        print("User wins this round.")
+        user_score += 1
+    elif (user == "stone" and computer == "paper") or \
+         (user == "paper" and computer == "scissors") or \
+         (user == "scissors" and computer == "stone"):
+        print("Computer wins this round.")
+        computer_score += 1
+    else:
+        print("Invalid input. No points.")
+
+    attempts += 1
+    print(f"Score — User: {user_score}, Computer: {computer_score}")
+    print(":) "  * 10)
+
+# Final result
+print("Final Scores:")
+print(f"User: {user_score}")
+print(f"Computer: {computer_score}")
+
+if user_score > computer_score:
+    print("User wins the game.")
+elif computer_score > user_score:
+    print("Computer wins the game.")
+else:
+    print("It's a tie game.")

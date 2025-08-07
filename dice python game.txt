@@ -1,0 +1,96 @@
+import random
+import time
+
+# time.sleep is a function or a method in pytho which is used to create a time interval between two tasks:)
+time.sleep(1)
+print("welcome to this dice game")
+print("This is a 2 player dice game")
+print("welcome player 1")
+print("welcome player 2")
+
+check = input("if you are a single player than you can play with the computer also(yes/no): ")
+time.sleep(1)
+if check == "yes":
+    rounds = 5
+    user_score = 0
+    computer_score = 0
+
+    for i in range(1, rounds + 1):
+        print("\nRound", i)
+        user = random.randint(1, 6)
+        computer = random.randint(1, 6)
+        print("your dice rolled choice:", user)
+        print("now computer's chance:", computer)
+
+        if computer > user:
+            print("computer's score is higher in this round")
+            time.sleep(1)
+            computer_score += 1
+        elif user > computer:
+            print("user's score is higher in this round")
+            time.sleep(1)
+            user_score += 1
+        else:
+            print("both got same score this round")
+
+    print("\nGame Over!")
+    print("Total user score:", user_score)
+    print("Total computer score:", computer_score)
+
+    if computer_score > user_score:
+        print("Computer wins the game!")
+        time.sleep(3)
+    elif user_score > computer_score:
+        print("User wins the game!")
+        time.sleep(3)
+    else:
+        print("The game is a tie!")
+        time.sleep(1)
+elif check == "no":
+    print("let's begin this game :)")
+    ask1 = input("enter your name player 1: ")
+    ask2 = input("enter your name player 2: ")
+    print("welcome player1:", ask1)
+    print("welcome player2:",ask2)
+    time.sleep(3)
+
+    rounds = 5
+    score1 = 0
+    score2 = 0
+
+    for i in range(1, rounds + 1):
+        print("\nRound", i)
+        print("player 1 turns first ")
+        user1 = random.randint(1, 6)
+        print("User's 1 score:", user1)
+
+        print("player 2 turns comes")
+        user2 = random.randint(1, 6)
+        print("User's 2 score:", user2)
+
+        if user1 > user2:
+            print("user 1 is having higher score this round")
+            time.sleep(3)
+            score1 += 1
+        elif user2 > user1:
+            print("user 2 is having higher score this round")
+            time.sleep(3)
+            score2 += 1
+        else:
+            print("both players got same score this round")
+
+    print("\nGame Over!")
+    print("Total score of", ask1, ":", score1)
+    print("Total score of", ask2, ":", score2)
+
+    if score1 > score2:
+        print(ask1, "wins the game!")
+        time.sleep(3)
+    elif score2 > score1:
+        print(ask2, "wins the game!")
+        time.sleep(3)
+    else:
+        print("The game is a tie!")
+
+else:
+    print("sorry error in the game")

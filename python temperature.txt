@@ -1,0 +1,32 @@
+print("Welcome to the temperature convert platform :)")
+name = input("Mention your name: ")
+age = int(input("Mention your age: "))
+print(f"Welcome {name}!")
+
+def convert():
+    while True:
+        ask2 = float(input("\nMention your temperature in degrees: "))
+        ask3 = input("Mention your first convert unit (C, F, K): ").upper()
+        ask4 = input("Mention your second convert unit (C, F, K): ").upper()
+
+        if ask3 == 'C' and ask4 == 'F':
+            print(f"Celsius to Fahrenheit: {9/5 * ask2 + 32}")
+        elif ask3 == 'F' and ask4 == 'C':
+            print(f"Fahrenheit to Celsius: {(5/9) * (ask2 - 32)}")
+        elif ask3 == 'C' and ask4 == 'K':
+            print(f"Celsius to Kelvin: {ask2 + 273.15}")
+        elif ask3 == 'K' and ask4 == 'C':
+            print(f"Kelvin to Celsius: {ask2 - 273.15}")
+        elif ask3 == 'F' and ask4 == 'K':
+            print(f"Fahrenheit to Kelvin: {(5/9) * (ask2 - 32) + 273.15}")
+        elif ask3 == 'K' and ask4 == 'F':
+            print(f"Kelvin to Fahrenheit: {(9/5) * (ask2 - 273.15) + 32}")
+        else:
+            print("Invalid conversion units entered.")
+
+        again = input("\nDo you want to convert another temperature? (yes/no): ").lower()
+        if again != 'yes':
+            print("Thanks for using the temperature converter. Goodbye!")
+            break
+
+convert()

@@ -1,0 +1,22 @@
+positive_words = ["good", "great", "love", "excellent", "amazing", "happy", "smooth", "fast"]
+negative_words = ["bad", "slow", "hate", "confusing", "terrible", "bug", "crash", "poor"]
+feedbacks = [
+    "I love this app, very smooth experience!",
+    "The UI is confusing and slow.",
+    "Great features but crashes too often.",
+    "Amazing customer support!",
+    "The performance is bad and makes me unhappy."
+]
+
+for fb in feedbacks:
+    fb_lower = fb.lower()
+    pos_count = sum(word in fb_lower for word in positive_words)
+    neg_count = sum(word in fb_lower for word in negative_words)
+    if pos_count > neg_count:
+        sentiment = "Positive"
+    elif neg_count > pos_count:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
+    
+    print(f"Feedback: {fb}\nSentiment: {sentiment}\n")

@@ -8,3 +8,4 @@ A basic simulation of an e-commerce shopping cart. Users can add, remove, and vi
 A fun dice game where two players (or one player and the computer) roll a dice for several rounds. The game tracks scores for each round and declares the final winner based on total points.
 4:To-do-List: A to-do-list which can take the tasks and can even see ,delete or check
 5:Temperature convert:A temperature convert system which takes the temperature as input and convert it to the temperature according to the user's requirements.
+6:User feedback analyzer:A mini project showcasing and giving the response about the user's feedback 

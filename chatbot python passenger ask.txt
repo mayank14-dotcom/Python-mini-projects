@@ -1,0 +1,33 @@
+def get_passenger_details():
+    print("Welcome to Smart Bus Assistant")
+    name = input("Please enter your name: ")
+    age = input("Enter your age: ")
+    source = input("Enter your starting point: ")
+    destination = input("Enter your destination: ")
+    return {"name": name, "age": age, "source": source, "destination": destination}
+
+def chatbot(passenger):
+    print(f"\nHello {passenger['name']}")
+    print("I can help you with routes, timings, and fare. Type 'exit' to quit.\n")
+
+    while True:
+        query = input("You: ").lower()
+
+        if query in ["exit", "quit", "bye"]:
+            print("Assistant: Thank you for traveling with us. Safe journey!")
+            break
+
+        # Handle queries in a simple way
+        if "fare" in query:
+            print(f"Assistant: Fare from {passenger['source']} to {passenger['destination']} is ?30.")
+        elif "time" in query or "next bus" in query:
+            print(f"Assistant: Next bus from {passenger['source']} to {passenger['destination']} is at 10:30 AM.")
+        elif "route" in query:
+            print(f"Assistant: Route from {passenger['source']} ? {passenger['destination']} is via Central Bus Stand.")
+        else:
+            print("Assistant: Sorry, I can only help with fare, timings, and routes.")
+
+# Run program
+if __name__ == "__main__":
+    passenger = get_passenger_details()
+    chatbot(passenger)
